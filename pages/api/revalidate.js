@@ -4,8 +4,8 @@ export default async function handler(req, res) {
     return res.status(401).json({ message: 'Invalid token' })
   }
 
-  const reqBody = JSON.parse(req.body)
-  const modifiedPosts = reqBody.payload.commits[0].modified;
+  const reqBody = JSON.parse(req.body.payload)
+  const modifiedPosts = reqBody.commits[0].modified;
 
   try {
     // this should be the actual path not a rewritten path
@@ -16,6 +16,6 @@ export default async function handler(req, res) {
   } catch (err) {
     // If there was an error, Next.js will continue
     // to show the last successfully generated page
-    return res.status(500).json({ err })
+    return res.status(500).json({ requestBody: reqBody })
   }
 }
