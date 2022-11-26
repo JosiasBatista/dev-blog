@@ -26,12 +26,11 @@ export default function Home({ allPostsData  }) {
       <section className={utilStyles.headingMd}>
         <p>
           Hello, my name is Josias Leal. I'm a fullstack developer and I'm passionate about learning new things. 
-          This is my <a href="https://github.com/JosiasBatista">Github</a>
+          Currently I'm working with VueJS, React, React Native and Java, and I hope I can bring some knowledge for you
+          through this Blog.
+          If you want to see more tech content, thi is my <a href="https://www.youtube.com/@josiasabraao">YouTube Channel </a>
+          and this is my <a href="https://github.com/JosiasBatista">Github</a>
         </p>
-        {/* <p>
-          (This is a sample website - you’ll be building a site like this on{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p> */}
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
