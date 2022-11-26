@@ -4,17 +4,17 @@ export default async function handler(req, res) {
     return res.status(401).json({ message: 'Invalid token' })
   }
 
-  // const modifiedPosts = req;
+  const modifiedPosts = req.body.payload.commits[0].modified;
 
   try {
     // this should be the actual path not a rewritten path
     // e.g. for "/blog/[slug]" this should be "/blog/post-1"
-    // await res.revalidate(`/posts/${modifiedPosts[0].replace(/\.md$/, '')}`)
+    await res.revalidate(`/posts/${modifiedPosts[0].replace(/\.md$/, '')}`)
 
-    return res.json({ revalidated: true, reqBody: req.body })
+    return res.json({ revalidated: true })
   } catch (err) {
     // If there was an error, Next.js will continue
     // to show the last successfully generated page
-    return res.status(500).send('Error revalidating')
+    return res.status(500).json({ err })
   }
 }
