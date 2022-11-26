@@ -7,7 +7,7 @@ import { getSortedPostsFromGit } from '../lib/posts';
 import Layout, { siteTitle } from '../components/layout';
 import Date from '../components/date';
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const allPostsData = await getSortedPostsFromGit();
 
   return {
