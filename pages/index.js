@@ -28,7 +28,7 @@ export default function Home({ allPostsData  }) {
           Hello, my name is Josias Leal. I'm a fullstack developer and I'm passionate about learning new things. 
           Currently I'm working with VueJS, React, React Native and Java, and I hope I can bring some knowledge for you
           through this Blog.
-          If you want to see more tech content, thi is my <a href="https://www.youtube.com/@josiasabraao">YouTube Channel </a>
+          If you want to see more tech content, this is my <a href="https://www.youtube.com/@josiasabraao">YouTube Channel </a>
           and this is my <a href="https://github.com/JosiasBatista">Github</a>
         </p>
       </section>
