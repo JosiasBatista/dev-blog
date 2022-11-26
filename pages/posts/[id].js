@@ -8,10 +8,12 @@ import Date from '../../components/date';
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id);
+
   return {
     props: {
       postData,
     },
+    revalidate: 60
   };
 }
 
@@ -20,7 +22,7 @@ export async function getStaticPaths() {
   
   return {
     paths,
-    fallback: false,
+    fallback: 'blocking',
   };
 }
 
