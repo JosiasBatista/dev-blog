@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { getAllPostIds, getPostData } from '../../lib/posts';
 
@@ -27,6 +29,16 @@ export async function getStaticPaths() {
 }
 
 export default function Post({ postData }) {
+  const router = useRouter();
+
+  const refreshData = () => {
+    router.replace(router.asPath);
+  }
+
+  useEffect(() => {
+    refreshData()
+  }, [])
+
   return (
     <Layout>
       <Head>
