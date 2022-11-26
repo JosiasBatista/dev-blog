@@ -10,4 +10,4 @@ Access http://localhost:3000 to see the application running
 
 # Running Project
 
-This project will be deployed for production in the future
+You can see the Blog running here: https://josias-devblog.vercel.app/
