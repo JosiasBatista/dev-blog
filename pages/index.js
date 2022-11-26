@@ -3,12 +3,13 @@ import Link from 'next/link';
 
 import utilStyles from '../styles/utils.module.css';
 
-import { getSortedPostsData } from '../lib/posts';
+import { getSortedPostsFromGit } from '../lib/posts';
 import Layout, { siteTitle } from '../components/layout';
 import Date from '../components/date';
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
+  const allPostsData = await getSortedPostsFromGit();
+
   return {
     props: {
       allPostsData,
@@ -23,11 +24,14 @@ export default function Home({ allPostsData  }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>Hello, my name is Josias Leal. I'm a fullstack developer and I'm passionate about learning new things. This is my github: https://github.com/JosiasBatista</p>
         <p>
+          Hello, my name is Josias Leal. I'm a fullstack developer and I'm passionate about learning new things. 
+          This is my <a href="https://github.com/JosiasBatista">Github</a>
+        </p>
+        {/* <p>
           (This is a sample website - you’ll be building a site like this on{' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
+        </p> */}
       </section>
 
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
