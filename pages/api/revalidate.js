@@ -4,7 +4,8 @@ export default async function handler(req, res) {
     return res.status(401).json({ message: 'Invalid token' })
   }
 
-  const modifiedPosts = req.body.payload.commits[0].modified;
+  const reqBody = JSON.parse(req.body)
+  const modifiedPosts = reqBody.payload.commits[0].modified;
 
   try {
     // this should be the actual path not a rewritten path
